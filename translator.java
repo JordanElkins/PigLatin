@@ -15,7 +15,7 @@ public class translator {
 			while (sc.hasNext()) {
 				/* Takes the convert.txt file and scans it to sc, then makes that scan String
 				 * english. String pigLatin is made from method getPigLatin where the translations are happening.
-				 * Use a format sys.out to display the results in tabular format
+				 * Use a format sys.out format style to display the results in tabular format
 				 */
 				String english = sc.next().trim();
 				String pigLatin = getPigLatin(english).toUpperCase();
@@ -62,7 +62,16 @@ public class translator {
 				result = word.substring(2) + word.substring(0, 2) + "Ay";
 				return result;
 			}
-
+			//Looks for vowel in fourth position
+			char b = word.charAt(3);
+			if (b == 'A' | b == 'E' || b == 'I' || b == 'O' || b == 'U' || b == 'a' || b == 'e' || b == 'i' || b == 'o'
+					|| b == 'u') {
+				/*Same operation except we remove the first three letters and add
+				 * them to the end + "ay"
+				 */
+				result = word.substring(3) + word.substring(0, 3) + "ay";
+				return result;
+			}
 		}
 
 	}
